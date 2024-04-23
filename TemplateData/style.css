@@ -1,0 +1,96 @@
+body { padding: 0; margin: 0 }
+#unity-container { position: absolute }
+#unity-container.unity-desktop { left: 50%; top: 50%; transform: translate(-50%, -50%) }
+#unity-container.unity-mobile { width: 100%; height: 100% }
+#unity-canvas { background: url('loading-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    /* 设置高度为视口高度，确保图片填满整个屏幕 */
+    display: flex;
+    /* 使用flex布局 */
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
+   }
+.unity-mobile #unity-canvas { width: 100%; height: 100% }
+#unity-loading-bar { 
+    position: absolute; 
+    left: 50%; top: 50%; 
+    transform: translate(-50%, -50%); 
+    display: none }
+#unity-logo {
+     /* width: 154px; height: 130px; background: url('unity-logo-light.png') no-repeat center  */
+    }
+    #unity-progress-bar-empty 
+    { 
+        /* width: 141px; 
+        height: 18px; 
+        margin-top: 120px; 
+        margin-left: 6.5px; 
+        background: url('progress-bar-empty-light.png') no-repeat center;
+        display: block;
+        position: absolute;
+        top: calc(100% + 110px); 
+        left: 50%;
+        transform: translateX(-50%);
+        top: calc(100% + 10px);  */
+        width: 250px; /* Set the width of the progress bar */
+      height: 30px; /* Set the height of the progress bar */
+      margin-top: 180px;
+      margin-left: 50%;
+      transform: translateX(-50%); /* Center the progress bar horizontally */
+      position: absolute;
+      top: calc(100% + 30px);
+      left: 50%;
+      border-radius: 140px; /* Apply rounded edges */
+      overflow: hidden; /* Hide overflowing content */
+      background-color: #c8e8f7; /* Set the background color */
+      }
+    #unity-progress-bar-full 
+    { 
+        /* width: 0%; 
+        height: 18px; 
+        
+        background: url('progress-bar-full-light.png') no-repeat center  */
+    
+        height: 100%; /* Set the height to 100% to fill the progress bar */
+      background-color: #030303; /* Set the fill color */
+      transition: width 0.3s ease; /* Add a smooth transition for the fill width */
+      }
+#unity-footer { position: relative }
+.unity-mobile #unity-footer { display: none }
+#unity-webgl-logo { float:left; width: 204px; height: 38px; background: url('webgl-logo.png') no-repeat center }
+#unity-build-title { float: right; margin-right: 10px; line-height: 38px; font-family: arial; font-size: 18px }
+#unity-fullscreen-button { float: right; width: 38px; height: 38px; background: url('fullscreen-button.png') no-repeat center }
+#unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
+.loading-container {
+    display: none; /* Initially hide the loading container */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+    z-index: 9999; /* Ensure the loading container is on top of other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loading {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
